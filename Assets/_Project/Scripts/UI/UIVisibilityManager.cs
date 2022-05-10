@@ -5,7 +5,7 @@ namespace snakefever
 {
     public class UIVisibilityManager : UIVisibilityHandler
     {
-        [SerializeField] private float _showDelay = 0.25f;
+        [SerializeField] private float _showDelay = 0.1f;
 
         private void Awake()
         {

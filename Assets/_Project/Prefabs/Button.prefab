@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5114434923012307431}
   - component: {fileID: 1173214625546036204}
   - component: {fileID: 5869761069064574893}
+  - component: {fileID: 4607684592361428749}
+  - component: {fileID: 3814300283405243893}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -82,6 +84,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1173214625546036204}
   _visibleBool: visible
+--- !u!114 &4607684592361428749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114434923012307425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25f3db1b3f7ec3c2873543f80f221bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1173214625546036204}
+  _selectableBool: selected
+--- !u!114 &3814300283405243893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114434923012307425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ada940fc5db16bd9fbddb60d948c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activityParser: {fileID: 0}
+  _selectable: {fileID: 4607684592361428749}
+  _interactable: {fileID: 0}
 --- !u!1 &5114434923326306996
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +125,7 @@ GameObject:
   - component: {fileID: 5114434923326306952}
   - component: {fileID: 5114434923326306953}
   - component: {fileID: 5114434923326306954}
+  - component: {fileID: 1505261405635900719}
   m_Layer: 5
   m_Name: Button Holder
   m_TagString: Untagged
@@ -179,7 +211,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -204,6 +236,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1505261405635900719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114434923326306996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &5114434924448618918
 GameObject:
   m_ObjectHideFlags: 0
