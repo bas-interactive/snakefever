@@ -1290,6 +1290,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7068039447174959180, guid: 45bd6fd17f52df14cb76ae1062541470, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2800000, guid: b1b079d053c3d0c41952dadf32a89ffd, type: 3}
+    - target: {fileID: 7068039447174959180, guid: 45bd6fd17f52df14cb76ae1062541470, type: 3}
       propertyPath: m_Name
       value: Game Master
       objectReference: {fileID: 0}
