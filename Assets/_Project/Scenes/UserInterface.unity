@@ -218,6 +218,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Join Lobby
       objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1848430072}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JoinLobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: snakefever.MainMenuFunctions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5114434924448618916, guid: c954b36d389a3531abe333209d752e61, type: 3}
       propertyPath: m_Text
       value: 'Join Lobby
@@ -320,6 +348,34 @@ PrefabInstance:
     - target: {fileID: 5114434923012307425, guid: c954b36d389a3531abe333209d752e61, type: 3}
       propertyPath: m_Name
       value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1848430072}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: snakefever.MainMenuFunctions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5114434924448618916, guid: c954b36d389a3531abe333209d752e61, type: 3}
       propertyPath: m_Text
@@ -449,6 +505,7 @@ GameObject:
   - component: {fileID: 1848430069}
   - component: {fileID: 1848430070}
   - component: {fileID: 1848430071}
+  - component: {fileID: 1848430072}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -522,7 +579,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -700
+  m_Spacing: -741.84
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -530,6 +587,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1848430072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848430066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ca7edb4f357e72bb6375d05aeeb082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1899956114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5114434923012307425, guid: c954b36d389a3531abe333209d752e61, type: 3}
@@ -770,6 +839,34 @@ PrefabInstance:
     - target: {fileID: 5114434923012307425, guid: c954b36d389a3531abe333209d752e61, type: 3}
       propertyPath: m_Name
       value: Create Lobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1848430072}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CreateLobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: snakefever.MainMenuFunctions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114434923326306954, guid: c954b36d389a3531abe333209d752e61, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c954b36d389a3531abe333209d752e61, type: 3}
