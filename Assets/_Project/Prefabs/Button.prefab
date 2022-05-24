@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5114434923012307431}
   - component: {fileID: 1173214625546036204}
   - component: {fileID: 5869761069064574893}
+  - component: {fileID: 4955891259671430292}
+  - component: {fileID: 8986912877284951069}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -82,6 +84,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1173214625546036204}
   _visibleBool: visible
+--- !u!114 &4955891259671430292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114434923012307425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f53270576ec7a51b75ccc601342894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1173214625546036204}
+  _selectedBool: selected
+--- !u!114 &8986912877284951069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114434923012307425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e4d293db486fce7992d6d6f2326f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1173214625546036204}
+  _pressedBool: pressed
 --- !u!1 &5114434923326306996
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,11 +251,51 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 4955891259671430292}
+          m_TargetAssemblyTypeName: snakefever.UISelectable, Assembly-CSharp
+          m_MethodName: OnSelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 4955891259671430292}
+          m_TargetAssemblyTypeName: snakefever.UISelectable, Assembly-CSharp
+          m_MethodName: OnDeSelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8986912877284951069}
+          m_TargetAssemblyTypeName: snakefever.UIPressable, Assembly-CSharp
+          m_MethodName: OnSelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5114434924448618918
 GameObject:
   m_ObjectHideFlags: 0

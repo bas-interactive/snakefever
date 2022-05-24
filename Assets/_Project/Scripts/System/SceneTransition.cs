@@ -1,46 +1,49 @@
 ﻿using UnityEngine.SceneManagement;
 
-public class SceneTransition : Transition
+namespace snakefever
 {
-    private int _nextScene;
-    private readonly int _sceneToUnload = -1;
-    private ITransitionCompleteCallback _sceneLoadedCallback = null;
-
-    public SceneTransition(FSM fsm, GameState transitionTo, int nextScene) : base(fsm, transitionTo)
+    public class SceneTransition : Transition
     {
-        _nextScene = nextScene;
-    }
+        private int _nextScene;
+        private readonly int _sceneToUnload = -1;
+        private ITransitionCompleteCallback _sceneLoadedCallback = null;
 
-    public SceneTransition(FSM fsm, GameState transitionTo, int nextScene, int sceneToUnload) : base(fsm, transitionTo)
-    {
-        _nextScene = nextScene;
-        _sceneToUnload = sceneToUnload;
-    }
-
-    public SceneTransition(FSM fsm, GameState transitionTo, int nextScene, int sceneToUnload, ITransitionCompleteCallback sceneLoadedCallback) : base(fsm, transitionTo)
-    {
-        _nextScene = nextScene;
-        _sceneToUnload = sceneToUnload;
-        _sceneLoadedCallback = sceneLoadedCallback;
-    }
-
-    protected override void FadeOutComplete()
-    {
-        DeRegister();
-        Callback();
-
-        SceneManager.LoadSceneAsync(_nextScene, LoadSceneMode.Additive).completed += _ => SceneLoadComplete();
-    }
-
-    private void SceneLoadComplete()
-    {
-        _sceneLoadedCallback.OnTransitionComplete();
-
-        if (_sceneToUnload != -1)
+        public SceneTransition(GameStateMachine fsm, GameState transitionTo, int nextScene) : base(fsm, transitionTo)
         {
-            SceneManager.UnloadSceneAsync(_sceneToUnload);
+            _nextScene = nextScene;
         }
 
-        EndTransition();
+        public SceneTransition(GameStateMachine fsm, GameState transitionTo, int nextScene, int sceneToUnload) : base(fsm, transitionTo)
+        {
+            _nextScene = nextScene;
+            _sceneToUnload = sceneToUnload;
+        }
+
+        public SceneTransition(GameStateMachine fsm, GameState transitionTo, int nextScene, int sceneToUnload, ITransitionCompleteCallback sceneLoadedCallback) : base(fsm, transitionTo)
+        {
+            _nextScene = nextScene;
+            _sceneToUnload = sceneToUnload;
+            _sceneLoadedCallback = sceneLoadedCallback;
+        }
+
+        protected override void FadeOutComplete()
+        {
+            DeRegister();
+            Callback();
+
+            SceneManager.LoadSceneAsync(_nextScene, LoadSceneMode.Additive).completed += _ => SceneLoadComplete();
+        }
+
+        private void SceneLoadComplete()
+        {
+            _sceneLoadedCallback.OnTransitionComplete();
+
+            if (_sceneToUnload != -1)
+            {
+                SceneManager.UnloadSceneAsync(_sceneToUnload);
+            }
+
+            EndTransition();
+        }
     }
 }

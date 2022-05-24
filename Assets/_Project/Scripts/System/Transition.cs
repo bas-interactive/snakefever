@@ -1,46 +1,49 @@
-﻿public class Transition : GameState
+﻿namespace snakefever
 {
-    private GameState _transitionTo;
-    private IFadeOutCompleteCallback _fadeOutCompleteCallback = null;
-
-    public Transition(FSM fsm, GameState transitionTo) : base(fsm)
+    public class Transition : GameState
     {
-        _transitionTo = transitionTo;
-    }
+        private GameState _transitionTo;
+        private ITransitionCompleteCallback _fadeOutCompleteCallback = null;
 
-    public Transition(FSM fsm, GameState transitionTo, IFadeOutCompleteCallback callback) : base(fsm)
-    {
-        _transitionTo = transitionTo;
-        _fadeOutCompleteCallback = callback;
-    }
+        public Transition(GameStateMachine fsm, GameState transitionTo) : base(fsm)
+        {
+            _transitionTo = transitionTo;
+        }
 
-    public override void Enter()
-    {
-        GameManager.Instance.TransitionManager.OnFadeOutComplete += FadeOutComplete;
-        GameManager.Instance.TransitionManager.FadeOut();
-    }
+        public Transition(GameStateMachine fsm, GameState transitionTo, ITransitionCompleteCallback callback) : base(fsm)
+        {
+            _transitionTo = transitionTo;
+            _fadeOutCompleteCallback = callback;
+        }
 
-    protected virtual void FadeOutComplete()
-    {
-        DeRegister();
-        Callback();
+        public override void Enter()
+        {
+            GameManager.Instance.TransitionManager.OnFadeOutComplete += FadeOutComplete;
+            GameManager.Instance.TransitionManager.FadeOut();
+        }
 
-        EndTransition();
-    }
+        protected virtual void FadeOutComplete()
+        {
+            DeRegister();
+            Callback();
 
-    protected void DeRegister()
-    {
-        GameManager.Instance.TransitionManager.OnFadeOutComplete -= FadeOutComplete;
-    }
+            EndTransition();
+        }
 
-    protected void Callback()
-    {
-        _fadeOutCompleteCallback?.FadeOutComplete();
-    }
+        protected void DeRegister()
+        {
+            GameManager.Instance.TransitionManager.OnFadeOutComplete -= FadeOutComplete;
+        }
 
-    protected void EndTransition()
-    {
-        GameManager.Instance.TransitionManager.FadeIn();
-        _fsm.SetState(_transitionTo);
+        protected void Callback()
+        {
+            _fadeOutCompleteCallback?.OnTransitionComplete();
+        }
+
+        protected void EndTransition()
+        {
+            GameManager.Instance.TransitionManager.FadeIn();
+            _stateMachine.SetState(_transitionTo);
+        }
     }
 }
