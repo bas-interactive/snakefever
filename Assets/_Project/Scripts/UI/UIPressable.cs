@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace snakefever
 {
@@ -10,10 +9,18 @@ namespace snakefever
 
         [SerializeField] private string _pressedBool = "pressed";
 
-        public void OnSelect()
+        [SerializeField] private UnityEvent OnPressEvent;
+
+        public void OnPress()
         {
+            OnPressEvent?.Invoke();
+
             _animator.SetBool(_pressedBool, true);
-            Debug.Log("aaaaaaaa");
+        }
+
+        public void ResetBool()
+        {
+            _animator.SetBool(_pressedBool, false);
         }
     }
 }

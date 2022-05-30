@@ -15,7 +15,7 @@ namespace snakefever
         public override void Enter()
         {
             OnMainMenuEnter?.Invoke();
-            Debug.Log("aaa");
+            GameManager.Instance.TransitionManager.FadeIn();
         }
 
         public override void Exit()
@@ -35,7 +35,7 @@ namespace snakefever
 
         public override void Quit()
         {
-            
+            Application.Quit();
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace snakefever
@@ -8,26 +9,49 @@ namespace snakefever
         [SerializeField] private Animator _animator;
         [SerializeField] private string _fadeInAnimation;
         [SerializeField] private string _fadeOutAnimation;
+        [SerializeField] private float _duration;
 
         public event Action OnFadeInComplete;
         public event Action OnFadeOutComplete;
 
         public void FadeIn()
         {
-            _animator.Play(_fadeInAnimation);
+            StopAllCoroutines();
+            
+            StartCoroutine(PlayFadeInAnimation());
         }
 
         public void FadeOut()
         {
-            _animator.Play(_fadeOutAnimation);
+            StopAllCoroutines();
+
+            StartCoroutine(PlayFadeOutAnimation());
         }
 
-        public void FadeInComplete()
+        private IEnumerator PlayFadeOutAnimation()
+        {
+            _animator.Play(_fadeOutAnimation);
+
+            yield return new WaitForSeconds(_duration);
+
+            FadeOutComplete();
+        }
+
+        private IEnumerator PlayFadeInAnimation()
+        {
+            _animator.Play(_fadeInAnimation);
+
+            yield return new WaitForSeconds(_duration);
+
+            FadeInComplete();
+        }
+
+        private void FadeInComplete()
         {
             OnFadeInComplete?.Invoke();
         }
 
-        public void FadeOutComplete()
+        private void FadeOutComplete()
         {
             OnFadeOutComplete?.Invoke();
         }
