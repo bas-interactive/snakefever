@@ -6,6 +6,14 @@ namespace snakefever
 {
     public class JoinLobbyMenuHandler : UIMenuHandler
     {
-        
+        private void OnEnable() 
+        {
+            JoinLobbyMenu.OnJoinLobbyMenuEnter += ShowMenu;
+        }
+
+        private void OnDestroy()
+        {
+            JoinLobbyMenu.OnJoinLobbyMenuEnter -= ShowMenu;
+        }
     }
 }

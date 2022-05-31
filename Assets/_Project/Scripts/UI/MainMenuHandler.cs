@@ -11,7 +11,7 @@ namespace snakefever
             MainMenu.OnMainMenuEnter += ShowMenu;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             MainMenu.OnMainMenuEnter -= ShowMenu;
         }

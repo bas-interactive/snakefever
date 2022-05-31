@@ -30,7 +30,7 @@ namespace snakefever
 
         public override void JoinLobby()
         {
-            
+            _stateMachine.SetState(new Transition(_stateMachine, new JoinLobbyMenu(_stateMachine)));
         }
 
         public override void Quit()
