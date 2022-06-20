@@ -15,7 +15,7 @@ namespace snakefever
         protected void HideMenu()
         {
             _visibilityManager.HideElements();
-            _visibilityManager.OnComplete += SetMenuInActive;
+            _visibilityManager.OnComplete += SetMenuInactiveIfExited;
         }
 
         protected void SetMenuActive()
@@ -26,6 +26,14 @@ namespace snakefever
         protected void SetMenuInActive()
         {
             _visibilityManager.gameObject.SetActive(false);
+        }
+
+        protected void SetMenuInactiveIfExited()
+        {
+            if (!_visibilityManager.AllActive)
+            {
+                SetMenuInActive();
+            }
         }
     }
 }

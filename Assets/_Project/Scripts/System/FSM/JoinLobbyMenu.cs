@@ -22,5 +22,10 @@ namespace snakefever
         {
             OnJoinLobbyMenuExit?.Invoke();
         }
+
+        public override void EnterMainMenu()
+        {
+            _stateMachine.SetState(new Transition(_stateMachine, new MainMenu(_stateMachine)));
+        }
     }
 }

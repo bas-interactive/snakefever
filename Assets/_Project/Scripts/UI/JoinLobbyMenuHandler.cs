@@ -9,11 +9,13 @@ namespace snakefever
         private void OnEnable() 
         {
             JoinLobbyMenu.OnJoinLobbyMenuEnter += ShowMenu;
+            JoinLobbyMenu.OnJoinLobbyMenuExit += HideMenu;
         }
 
         private void OnDestroy()
         {
             JoinLobbyMenu.OnJoinLobbyMenuEnter -= ShowMenu;
+            JoinLobbyMenu.OnJoinLobbyMenuExit -= HideMenu;
         }
     }
 }
