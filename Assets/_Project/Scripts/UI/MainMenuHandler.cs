@@ -8,14 +8,14 @@ namespace snakefever
     {
         private void OnEnable() 
         {
-            MainMenu.OnMainMenuEnter += ShowMenu;
-            MainMenu.OnMainMenuExit += HideMenu;
+            MainMenu.OnStateEnter += ShowMenu;
+            MainMenu.OnStateExit += HideMenu;
         }
 
         private void OnDestroy()
         {
-            MainMenu.OnMainMenuEnter -= ShowMenu;
-            MainMenu.OnMainMenuExit -= HideMenu;
+            MainMenu.OnStateEnter -= ShowMenu;
+            MainMenu.OnStateExit -= HideMenu;
         }
     }
 }
