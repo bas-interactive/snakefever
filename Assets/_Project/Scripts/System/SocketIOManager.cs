@@ -8,6 +8,7 @@ namespace snakefever
 {
     public class SocketIOManager : MonoBehaviour
     {
+        // https://github.com/itisnajim/SocketIOUnity
         private Uri Uri = new Uri("https://www.example.com");
 
         private static SocketIOUnity Socket;
