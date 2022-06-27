@@ -5,19 +5,22 @@ namespace snakefever
 {
     public class MainMenu : GameState
     {
+        public static event Action OnStateEnter;
+        public static event Action OnStateExit;
+
         public MainMenu(GameStateMachine stateMachine) : base(stateMachine)
         {
         }
 
         public override void Enter()
         {
-            base.Enter();
+            OnStateEnter?.Invoke();
             GameManager.Instance.TransitionManager.FadeIn();
         }
 
         public override void Exit()
         {
-            base.Exit();
+            OnStateExit?.Invoke();
         }
         public override void CreateLobby()
         {

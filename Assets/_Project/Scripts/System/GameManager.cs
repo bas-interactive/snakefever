@@ -13,11 +13,23 @@ namespace snakefever
 
         public override void Init()
         {
+            GetComponents();
+
+            InitSocketIO();
+
+            InitStateMachine();
+        }
+
+        private void GetComponents()
+        {
             GameStateMachine = GetComponent<GameStateMachine>();
             TransitionManager = GetComponent<TransitionManager>();
             SocketIOManager = GetComponent<SocketIOManager>();
+        }
 
-            InitStateMachine();
+        private void InitSocketIO()
+        {
+            SocketIOManager.Init();
         }
 
         private void InitStateMachine()

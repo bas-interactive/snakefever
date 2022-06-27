@@ -6,21 +6,18 @@ namespace snakefever
 {
     public class GameState : State<GameStateMachine>
     {
-        public static event Action OnStateEnter;
-        public static event Action OnStateExit;
-
         public GameState(GameStateMachine stateMachine) : base(stateMachine)
         {
         }
 
         public override void Enter()
         {
-            OnStateEnter?.Invoke();
+            
         }
 
         public override void Exit()
         {
-            OnStateExit?.Invoke();
+            
         }
 
         public virtual void Quit()

@@ -5,6 +5,8 @@ namespace snakefever
 {
     public class JoinLobbyMenu : GameState
     {
+        public static event Action OnStateEnter;
+        public static event Action OnStateExit;
 
         public JoinLobbyMenu(GameStateMachine stateMachine) : base(stateMachine)
         {
@@ -12,12 +14,12 @@ namespace snakefever
 
         public override void Enter()
         {
-            base.Enter();
+            OnStateEnter?.Invoke();
         }
 
         public override void Exit()
         {
-            base.Exit();
+            OnStateExit?.Invoke();
         }
 
         public override void EnterMainMenu()

@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 6705294887853236540}
   - component: {fileID: 544694459398468280}
   - component: {fileID: 7123739405305405122}
-  - component: {fileID: 2372531647342474510}
+  - component: {fileID: 743920390766949005}
   m_Layer: 0
   m_Name: Game Master
   m_TagString: Untagged
@@ -149,7 +149,7 @@ MonoBehaviour:
   _fadeInAnimation: fadeIn
   _fadeOutAnimation: fadeOut
   _duration: 0.5
---- !u!114 &2372531647342474510
+--- !u!114 &743920390766949005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
