@@ -18,25 +18,6 @@ namespace snakefever
 
         public void Init()
         {
-            // string html = string.Empty;
-            // string url = @"http://snakefever.glitch.me";
-
-            // HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-
-            // request.AutomaticDecompression = DecompressionMethods.GZip;
-
-            // using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            // using (Stream stream = response.GetResponseStream())
-            // using (StreamReader reader = new StreamReader(stream))
-            // {
-            //     html = reader.ReadToEnd();
-            // }
-
-            // Debug.Log(html);
-
-            // return;
-
-
             Socket = new SocketIOUnity(Uri, new SocketIOOptions{
                 EIO = 4,
                 ExtraHeaders = new Dictionary<string, string>() {
@@ -46,7 +27,7 @@ namespace snakefever
 
             Socket.JsonSerializer = new NewtonsoftJsonSerializer();
 
-            //Socket.unityThreadScope = SocketIOUnity.UnityThreadScope.Update; 
+            Socket.unityThreadScope = SocketIOUnity.UnityThreadScope.Update; 
 
             Socket.OnConnected += (sender, e) =>
             {
@@ -55,16 +36,7 @@ namespace snakefever
 
             Socket.Connect();
 
-            Debug.Log(Socket.Connected);
-
             Send();
-
-            Debug.Log("Init SocketIomanager!");
-        }
-
-        private void Update()
-        {
-            Debug.Log(Socket.Connected);
         }
 
         public void Send()
