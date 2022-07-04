@@ -15,8 +15,6 @@ namespace snakefever
         {
             GetComponents();
 
-            InitSocketIO();
-
             InitStateMachine();
         }
 
@@ -25,11 +23,6 @@ namespace snakefever
             GameStateMachine = GetComponent<GameStateMachine>();
             TransitionManager = GetComponent<TransitionManager>();
             SocketIOManager = GetComponent<SocketIOManager>();
-        }
-
-        private void InitSocketIO()
-        {
-            SocketIOManager.Init();
         }
 
         private void InitStateMachine()

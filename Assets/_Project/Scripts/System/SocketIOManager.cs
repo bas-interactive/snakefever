@@ -1,11 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SocketIOClient;
 using System;
 using SocketIOClient.Newtonsoft.Json;
-using System.Net;
-using System.IO;
 
 namespace snakefever
 {
@@ -31,17 +28,29 @@ namespace snakefever
 
             Socket.OnConnected += (sender, e) =>
             {
-                Debug.Log("socket.OnConnected");
+                UnityThread.executeInUpdate(() => {
+                    GameManager.Instance.GameStateMachine.CurrentState.EndLoading();
+                });
             };
 
             Socket.Connect();
+        }
 
-            Send();
+        bool sent=  ! true;
+
+        void Update()
+        {
+            if (Socket.Connected && sent  ==false)
+            {
+                Send();
+                sent =true;
+            }
         }
 
         public void Send()
         {
-            Socket.Emit("eventName");
+            Debug.Log("send");
+            Socket.Emit("player_set_name", "Uwe");
         }
     }
 }

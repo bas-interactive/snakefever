@@ -15,16 +15,16 @@ namespace snakefever
         public override void Enter()
         {
             OnStateEnter?.Invoke();
-            GameManager.Instance.TransitionManager.FadeIn();
         }
 
         public override void Exit()
         {
             OnStateExit?.Invoke();
         }
+
         public override void CreateLobby()
         {
-            
+            Debug.Log("Create Lobby");
         }
 
         public override void JoinLobby()

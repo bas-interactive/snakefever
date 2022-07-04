@@ -51,5 +51,9 @@ namespace snakefever
         public virtual void EnterPauseMenu()
         {
         }
+
+        public virtual void EndLoading()
+        {
+        }
     }
 }

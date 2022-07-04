@@ -9,7 +9,7 @@ namespace snakefever
         {
         }
 
-        // Handle startscene loading, UI loading and player preferences loading here.
+        // Handle startscene loading, UI loading, web connection and player preferences loading here.
         public override void Enter()
         {
             SceneManager.LoadSceneAsync(Scenes.USER_INTERFACE, LoadSceneMode.Single).completed += _ => UISceneLoaded();
@@ -17,12 +17,14 @@ namespace snakefever
 
         private void UISceneLoaded()
         {
-            SceneManager.LoadSceneAsync(Scenes.START_MENU, LoadSceneMode.Additive).completed += _ => MainMenuLoaded(); 
+            SceneManager.LoadSceneAsync(Scenes.START_MENU, LoadSceneMode.Additive).completed += _ => InitConnection(); 
         }
 
-        private void MainMenuLoaded()
+        private void InitConnection()
         {
-            _stateMachine.SetState(new MainMenu(_stateMachine));
+            _stateMachine.SetState(new LoadingScreen(_stateMachine, new MainMenu(_stateMachine)));
+            GameManager.Instance.SocketIOManager.Init();
+            GameManager.Instance.TransitionManager.FadeIn();
         }
     }
 }
