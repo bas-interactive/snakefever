@@ -34,7 +34,7 @@ namespace snakefever
 
         public override void Quit()
         {
-            Application.Quit();
+            QuitManager.QuitGame();
         }
     }
 }
