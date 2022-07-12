@@ -6,12 +6,12 @@ namespace snakefever
     {
         public void JoinLobby()
         {
-            GameManager.Instance.GameStateMachine.CurrentState.JoinLobby();
+            GameManager.Instance.GameStateMachine.CurrentState.EnterJoinLobbyMenu();
         }
 
         public void CreateLobby()
         {
-            GameManager.Instance.GameStateMachine.CurrentState.CreateLobby();
+            GameManager.Instance.GameStateMachine.CurrentState.EnterCreateLobbyMenu();
         }
 
         public void Quit()

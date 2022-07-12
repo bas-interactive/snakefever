@@ -1,6 +1,4 @@
-using UnityEngine;
 using GenericStateMachine;
-using System;
 
 namespace snakefever
 {
@@ -32,11 +30,19 @@ namespace snakefever
         {
         }
 
-        public virtual void CreateLobby()
+        public virtual void EnterCreateLobbyMenu()
         {
         }
 
-        public virtual void JoinLobby()
+        public virtual void EnterJoinLobbyMenu()
+        {
+        }
+
+        public virtual void JoinRoom(string roomID)
+        {
+        }
+
+        public virtual void StartQuickplay()
         {
         }
 

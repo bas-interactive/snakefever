@@ -22,6 +22,11 @@ namespace snakefever
             OnStateExit?.Invoke();
         }
 
+        public override void JoinRoom(string roomID)
+        {
+            // emit event and wait for response
+        }
+
         public override void EnterMainMenu()
         {
             _stateMachine.SetState(new Transition(_stateMachine, new MainMenu(_stateMachine)));

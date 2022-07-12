@@ -22,12 +22,12 @@ namespace snakefever
             OnStateExit?.Invoke();
         }
 
-        public override void CreateLobby()
+        public override void EnterCreateLobbyMenu()
         {
             Debug.Log("Create Lobby");
         }
 
-        public override void JoinLobby()
+        public override void EnterJoinLobbyMenu()
         {
             _stateMachine.SetState(new Transition(_stateMachine, new JoinLobbyMenu(_stateMachine)));
         }

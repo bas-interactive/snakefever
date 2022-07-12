@@ -62,6 +62,26 @@ namespace snakefever
             }
         }
 
+        public void JoinRoom(string roomID)
+        {
+            Socket.Emit(MessageConstants.EVENT_ROOM_JOIN_REQUEST, roomID);
+        }
+
+        public void JoinQuickplay()
+        {
+
+        }
+
+        public void Emit(string emitEvent)
+        {
+            Socket.Emit(emitEvent);
+        }
+
+        public void EmitArguments(string emitEvent, params object[] arguments)
+        {
+            Socket.Emit(emitEvent, arguments);
+        }
+
         private void LogDebug(string message)
         {
 #if UNITY_EDITOR
